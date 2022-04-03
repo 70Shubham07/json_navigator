@@ -9,8 +9,8 @@ def readme():
 
 setup(
     name="navigate-json",
-    version="1.0.2",
-    description="A Python package to manage json objects.",
+    version="1.0.3",
+    description="A Python package to inpsect/manage json objects.",
     long_description=readme(),
     long_description_content_type="text/markdown",
     url="https://https://github.com/70Shubham07/json_navigator",
