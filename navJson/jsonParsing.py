@@ -17,7 +17,7 @@ def listParserAndCodeCreator( theList, rootCode = "", collectionOfCodes = list()
 	for itemIdx in range(len(theList)):
 
 		codeSoFar = rootCode
-		if (not isinstance( theList[ itemIdx ], dict ) ) and (not isinstance( theList[ itemIdx ], list) ):
+		if (not isinstance( theList[ itemIdx ], dict ) ) and (not isinstance( theList[ itemIdx ], list) ) and (not isinstance(theDict[key], tuple) ):
 			codeSoFar = codeSoFar + '[' + str(itemIdx) + ']'
 			collectionOfCodes.append( codeSoFar )
 
@@ -26,7 +26,7 @@ def listParserAndCodeCreator( theList, rootCode = "", collectionOfCodes = list()
 			codeSoFar = codeSoFar + '[' + str(itemIdx) +  ']'
 			collectionOfCodes, codeSoFar = jsonParserAndCodeCreator( nestedDict, codeSoFar, collectionOfCodes )
 
-		elif isinstance( theList[itemIdx], list ):
+		elif isinstance( theList[itemIdx], list ) or isinstance( theList[itemIdx], tuple ):
 			nestedList = theList[itemIdx]
 			codeSoFar = codeSoFar + '[' + str(itemIdx) + ']'
 			collectionOfCodes, codeSoFar = listParserAndCodeCreator( nestedList, codeSoFar, collectionOfCodes )			
@@ -41,7 +41,7 @@ def jsonParserAndCodeCreator( theDict:dict, rootCode = "", collectionOfCodes = l
 	for key in theDict:
 	
 		codeSoFar = rootCode
-		if (not isinstance(theDict[key], dict ) ) and (not isinstance(theDict[key], list) ):
+		if (not isinstance(theDict[key], dict ) ) and (not isinstance(theDict[key], list) ) and (not isinstance(theDict[key], tuple) ):
 			codeSoFar = codeSoFar + '["' + str(key) +  '"]'
 			collectionOfCodes.append( codeSoFar )
 
@@ -50,7 +50,7 @@ def jsonParserAndCodeCreator( theDict:dict, rootCode = "", collectionOfCodes = l
 			codeSoFar = codeSoFar + '["' + str(key) +  '"]'
 			collectionOfCodes, codeSoFar = jsonParserAndCodeCreator( nestedDict, codeSoFar, collectionOfCodes )
 
-		elif isinstance( theDict[key], list ):
+		elif isinstance( theList[itemIdx], list ) or isinstance( theList[itemIdx], tuple ):
 			nestedList = theDict[key]
 			codeSoFar = codeSoFar + '["' + str(key) + '"]'
 			collectionOfCodes, codeSoFar = listParserAndCodeCreator( nestedList, codeSoFar, collectionOfCodes )			
