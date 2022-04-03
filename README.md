@@ -9,7 +9,6 @@
 
 ### If the object you want to inspect is a Python list, use the method below
 
-### If jsonToBeParsed is the variable name - 
 
 jsonToBeParsed = [ {"A":2}, {"B":3} ]
 
@@ -31,7 +30,7 @@ resultList = [  (code , eval(code) ) for code in returnedCollectionOfCodes   ]
 ##### Output: (jsonToBeParsed["A"], 2), (jsonToBeParsed["B"][0], 3), (jsonToBeParsed["B"][1], 4 )
 
 
-### Try more complicated json structures.
+### You can use it for more complicated json structures!
 
 
 
