@@ -9,7 +9,7 @@ def readme():
 
 setup(
     name="navigate-json",
-    version="1.0.5",
+    version="1.0.7",
     description="A Python package to inpsect/manage json objects.",
     long_description=readme(),
     long_description_content_type="text/markdown",
