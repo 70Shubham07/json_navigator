@@ -38,6 +38,7 @@ def listParserAndCodeCreator( theList, rootCode = "", collectionOfCodes = list()
 def jsonParserAndCodeCreator( theDict:dict, rootCode = "", collectionOfCodes = list() ):
 
 
+    codeSoFar = rootCode
     for key in theDict:
     
         codeSoFar = rootCode
